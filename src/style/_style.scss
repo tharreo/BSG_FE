@@ -1,0 +1,29 @@
+* {
+  font-family: "Roboto", sans-serif !important;
+
+}
+
+
+.dot-loader__ {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  clip-path: inset(-45px);
+  color: #00979c;
+  box-shadow:
+          -60px 15px,
+          -60px 15px,
+          -60px 15px;
+  transform: translateY(-15px);
+  animation: d9 2s infinite linear;
+}
+
+.MuiFormControlLabel-root {
+  padding: 0 !important;
+  margin:  0 !important;
+}
+
+
+html, body, main {
+  background: #f1f5f9 !important;
+}
