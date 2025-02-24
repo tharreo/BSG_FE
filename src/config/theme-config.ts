@@ -1,5 +1,5 @@
 import { createTheme } from '@mui/material';
-import { STYLE_VARIABLE } from '../constant/style-variable.ts';
+import { STYLE_VARIABLE } from '../constants/style-variable.ts';
 
 const themeConfig = createTheme({
   palette: {

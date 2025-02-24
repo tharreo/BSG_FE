@@ -1,0 +1,18 @@
+export const ENDPOINT = {
+  SIGN_IN: () => `/auth/v1/sign-in`,
+  GET_ME: () => `/account/v1/get-me`,
+  LIST_ACCOUNT: () => `/account/v1/list`,
+  CREATE_NEW_ACCOUNT: () => `/account/v1/create-account`,
+  DELETE_ACCOUNT: (id: string) => `/account/v1/delete/${id}`,
+  LIST_CREDIT_CONSUMER: () => `/credit/v1/list/consumer`,
+  CREATE_CREDIT_CONSUMER: () => `/credit/v1/new/consumer`,
+  LIST_MAIl: () => `/mail/v1/list`,
+  LIST_PK_KUR: () => `/credit/v1/list/pk-kur`,
+  NEW_MAIL: () => `/mail/v1/create`,
+  GET_SUMMARY: () => `/credit/v1/summary`,
+  CREATE_BI_CHECKING: () => `/credit/v1/new/bi-checking`,
+  LIST_BI_CHECKING: () => `/credit/v1/list/bi-checking`,
+  LIST_COMMERCIAL: () => `/credit/v1/list/commercial`,
+  CRETE_COMMERCIAL: () => `/credit/v1/new/commercial`,
+  CREATE_PK_KUR: () => `/credit/v1/new/pk-kur`,
+};

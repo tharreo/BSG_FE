@@ -1,7 +1,7 @@
 import i18next from 'i18next';
 import { initReactI18next } from 'react-i18next';
 // @ts-expect-error
-import IdContentLanguage from '../constant/messages/id.json';
+import IdContentLanguage from '../constants/messages/id.json';
 
 i18next
   .use(initReactI18next)
