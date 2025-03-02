@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import  { Fragment, useEffect, useState } from 'react';
 import AuthServices from '../service/auth-service.ts';
 import { useTranslation } from 'react-i18next';
 import { Avatar, Box, Button, IconButton, ListItemIcon, Menu, MenuItem, Tooltip } from '@mui/material';
@@ -9,7 +9,7 @@ import { IResGetMe } from '../model/response/IResGetMe.ts';
 export function ProfileMenu() {
   const Account = useAppSelector((state) => state.Account);
   const { t } = useTranslation();
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [data, setData] = useState<IResGetMe | undefined>();
   const authService = new AuthServices();
 
@@ -33,7 +33,7 @@ export function ProfileMenu() {
   }
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
         <div className="hidden lg:block">
           <Tooltip title="Account">
@@ -76,6 +76,6 @@ export function ProfileMenu() {
           {t('logout')}
         </MenuItem>
       </Menu>
-    </React.Fragment>
+    </Fragment>
   );
 }

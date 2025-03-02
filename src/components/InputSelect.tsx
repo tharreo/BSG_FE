@@ -27,7 +27,6 @@ export function InputSelect(props: IProps) {
           displayEmpty
           onBlur={props.onBlur}
           error={!!props.errorMessage}
-          placeholder={props.placeholder}
           sx={{
             width: '100%',
             borderRadius: 1,
