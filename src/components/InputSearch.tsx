@@ -1,5 +1,4 @@
 import { CircularProgress, IconButton, InputAdornment, TextField } from '@mui/material';
-import React from 'react';
 import { STYLE_VARIABLE } from '../constants/style-variable.ts';
 import { MdClose, MdSearch } from 'react-icons/md';
 
