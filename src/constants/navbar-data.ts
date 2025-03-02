@@ -27,6 +27,12 @@ export const navbarData: INavbarData[] = [
     icon: MdMail,
   },
 
+    {
+    path: ROUTES.BI_CHECKING(),
+    title: 'bi-checking',
+    icon: MdFiberSmartRecord,
+  },
+
   {
     path: ROUTES.CONSUMER_CREDIT(),
     title: 'consumer-credit',
@@ -37,9 +43,5 @@ export const navbarData: INavbarData[] = [
     title: 'commercial-credit-menu',
     icon: MdFiberSmartRecord,
   },
-  {
-    path: ROUTES.BI_CHECKING(),
-    title: 'bi-checking',
-    icon: MdFiberSmartRecord,
-  },
+
 ];
