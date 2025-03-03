@@ -4,11 +4,13 @@ import SignInPage from '../pages/auth/signin-page.tsx';
 import { BiCheckingPage } from '../pages/credits/BiCheckingPage.tsx';
 import { CommercialCreditPage } from '../pages/credits/CommercialCreditPage.tsx';
 import { ConsumerCreditPage } from '../pages/credits/ConsumerCreditPage.tsx';
+import { PkKurPage } from '../pages/credits/PkKurPage.tsx';
 import { HomePage } from '../pages/HomePage.tsx';
 import { MailPage } from '../pages/MailPage.tsx';
 import { NewBiCheckingPage } from '../pages/new-credits/NewBiCheckingPage.tsx';
 import { NewCommercialCreditPage } from '../pages/new-credits/NewCommercialCreditPage.tsx';
 import { NewConsumerCreditPage } from '../pages/new-credits/NewConsumerCreditPage.tsx';
+import { NewPkKurCreditPage } from '../pages/new-credits/NewPkKurCreditPage.tsx';
 import { NewAccountPage } from '../pages/NewAccountPage.tsx';
 import { NewMailPage } from '../pages/NewMailPage.tsx';
 import { ROUTES } from './routes.ts';
@@ -79,5 +81,15 @@ export const routeList: IRoutesList[] = [
     element : NewCommercialCreditPage, 
     type : PageTypeEnums.PRIMARY,
     routes : ROUTES.NEW_COMMERCIAL()
+  },
+          {
+    element : PkKurPage, 
+    type : PageTypeEnums.PRIMARY,
+    routes : ROUTES.PK_KUR()
+  },
+            {
+    element : NewPkKurCreditPage, 
+    type : PageTypeEnums.PRIMARY,
+    routes : ROUTES.NEW_PK_KUR()
   },
 ];
