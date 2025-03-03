@@ -1,8 +1,14 @@
 import { PageTypeEnums } from '../enum/page-type-enums.ts';
 import { AccountPage } from '../pages/AccountPage.tsx';
 import SignInPage from '../pages/auth/signin-page.tsx';
+import { BiCheckingPage } from '../pages/credits/BiCheckingPage.tsx';
+import { CommercialCreditPage } from '../pages/credits/CommercialCreditPage.tsx';
+import { ConsumerCreditPage } from '../pages/credits/ConsumerCreditPage.tsx';
 import { HomePage } from '../pages/HomePage.tsx';
 import { MailPage } from '../pages/MailPage.tsx';
+import { NewBiCheckingPage } from '../pages/new-credits/NewBiCheckingPage.tsx';
+import { NewCommercialCreditPage } from '../pages/new-credits/NewCommercialCreditPage.tsx';
+import { NewConsumerCreditPage } from '../pages/new-credits/NewConsumerCreditPage.tsx';
 import { NewAccountPage } from '../pages/NewAccountPage.tsx';
 import { NewMailPage } from '../pages/NewMailPage.tsx';
 import { ROUTES } from './routes.ts';
@@ -43,5 +49,35 @@ export const routeList: IRoutesList[] = [
     element : NewMailPage, 
     type : PageTypeEnums.PRIMARY,
     routes : ROUTES.NEW_MAIl()
+  },
+   {
+    element : BiCheckingPage, 
+    type : PageTypeEnums.PRIMARY,
+    routes : ROUTES.BI_CHECKING()
+  },
+     {
+    element : NewBiCheckingPage, 
+    type : PageTypeEnums.PRIMARY,
+    routes : ROUTES.NEW_BI_CHECKING()
+  },
+     {
+    element : ConsumerCreditPage, 
+    type : PageTypeEnums.PRIMARY,
+    routes : ROUTES.CONSUMER_CREDIT()
+  },
+       {
+    element : NewConsumerCreditPage, 
+    type : PageTypeEnums.PRIMARY,
+    routes : ROUTES.NEW_CONSUMER()
+  },
+         {
+    element : CommercialCreditPage, 
+    type : PageTypeEnums.PRIMARY,
+    routes : ROUTES.COMMERCIAL_CREDIT()
+  },
+        {
+    element : NewCommercialCreditPage, 
+    type : PageTypeEnums.PRIMARY,
+    routes : ROUTES.NEW_COMMERCIAL()
   },
 ];
