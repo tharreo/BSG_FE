@@ -40,7 +40,7 @@
   "delete_account": "hapus akun",
   "reset_password": "atur ulang kata sandi",
   "consumer-credit": "Kredit Konsumer",
-  "commercial-credit": "Kredit Komersial PK KMP",
+  "commercial-credit": "Kredit Komersial KMP",
   "bi-checking": "BI Checking",
   "debitur-name": "nama debitur",
   "date": "tanggal",
@@ -107,7 +107,7 @@
   "objective": "tujuan",
   "insert-objective": "masukkan tujuan",
   "bi-checking-success-created": "pemeriksaan BI berhasil dibuat",
-  "add-new-commercial-credit": "tambah kredit komersial PK KMP baru",
+  "add-new-commercial-credit": "tambah kredit komersial KMP baru",
   "all": "semua",
   "credit-type": "tipe kredit",
   "commercial-credit-success-created": "kredit komersial berhasil dibuat",
@@ -117,8 +117,8 @@
   "mail-number" : "nomor surat",
   "insert-mail-number" : "masukan nomor surat",
   "commercial-credit-menu" : "kredit komersial",
-  "new-commercial-credit-pk-kur" : "kredit komersial PK KUR baru",
-  "commercial-credit-pk-kur" : "kredit komersial PK KUR",
+  "new-commercial-credit-pk-kur" : "kredit komersial KUR baru",
+  "commercial-credit-pk-kur" : "kredit komersial KUR",
   "request-number": "nomor PK",
   "insert-request-number" : "masukan nomor pengajuan",
   "pk_date" : "tanggal PK",
@@ -130,7 +130,9 @@
   "binding-type" : "jenis pengikatan",
   "insert-binding-type" : "masukan jenis pengikatan",
   "insert-notary" : "masukan notaris",
-  "credit-commercial-pk-kur-success-created" : "kredit komersial PK KUR berhasil dibuat",
-  "credit-agreement-number": "nomor perjanjian kredit"
+  "credit-commercial-pk-kur-success-created" : "kredit komersial KUR berhasil dibuat",
+  "credit-agreement-number": "nomor perjanjian kredit",
+  "KUR":"KUR",
+  "KMP" :"KMP"
 
 }
