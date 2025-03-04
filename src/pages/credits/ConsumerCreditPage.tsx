@@ -80,12 +80,6 @@ export function ConsumerCreditPage() {
       value: 'consumer_credit_type',
     },
     {
-      key: 'sub_type',
-      headerTitle: t('sub_type'),
-      align: 'left',
-      value: 'consumer_credit_sub_type',
-    },
-    {
       key: 'actions',
       headerTitle: '',
       align: 'left',
@@ -120,6 +114,7 @@ export function ConsumerCreditPage() {
           <TextLabelValue label={t('insurance')} value={page?.selectedData?.insurance || '-'} />
           <TextLabelValue label={t('created-by')} value={page?.selectedData?.created_by || '-'} />
           <TextLabelValue label={t('agency')} value={page?.selectedData?.agency || '-'} />
+          <TextLabelValue label={t('pk-number')} value={page?.selectedData?.pk_number || '-'} />
           <TextLabelValue
             label={t('type')}
             value={

@@ -24,15 +24,6 @@ export function NewConsumerCreditPage() {
   const page = useNewConsumerPage();
   const formik = page.formik;
 
-  function checkSubType() {
-    if (formik.values.consumer_credit_type) {
-      if (formik.values.consumer_credit_type === 'PENSIUN') {
-        return false;
-      } else return formik.values.consumer_credit_type !== 'KBPS';
-    } else {
-      return false;
-    }
-  }
 
   return (
     <>
@@ -65,60 +56,40 @@ export function NewConsumerCreditPage() {
               })}
           />
 
-          {checkSubType() && (
-            <FormControl>
-              <FormLabel className={'mb-2'} id="demo-row-radio-buttons-group-label">
-                {t('sub-type')}
-              </FormLabel>
-              <RadioGroup
-                onChange={(_, i) => formik.setFieldValue('consumer_credit_sub_type', i)}
-                className={'flex gap-4'}
-                classes={{ row: 'justify-between' }}
-                row
-                aria-labelledby="demo-row-radio-buttons-group-label "
-                name="row-radio-buttons-group"
-              >
-                {creditSubTypeList.map((e) => (
-                  <FormControlLabel
-                    classes={{
-                      root: 'w-[49%] p-0 m-0 border border-gray-400 rounded-[4px]',
-                      label: 'p-0 m-0',
-                    }}
-                    key={e}
-                    value={e}
-                    control={<Radio />}
-                    label={e}
-                  />
-                ))}
-              </RadioGroup>
-            </FormControl>
-          )}
-          {formik.values.consumer_credit_sub_type === 'SPPK' && (
-            <>
-              <InputText
-                label={t('phone-number')}
-                placeholder={t('insert-phone-number')}
-                required
-                name={'phone_number'}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                type={'phone_number'}
-                value={formik.values.phone_number || ''}
-                errorMessage={formik.touched.phone_number && formik.errors.phone_number}
-              />
-              <InputTextarea
-                label={t('address')}
-                placeholder={t('insert-address')}
-                required
-                name={'address'}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                type={'address'}
-                value={formik.values.address || ''}
-                errorMessage={formik.touched.address && formik.errors.address}
-              />
-            </>
-          )}
+          <>
+            <InputText
+              label={t('phone-number')}
+              placeholder={t('insert-phone-number')}
+              required
+              name={'phone_number'}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              type={'phone_number'}
+              value={formik.values.phone_number || ''}
+              errorMessage={formik.touched.phone_number && formik.errors.phone_number}
+            />
+            <InputText
+              label={t('pk_number')}
+              placeholder={t('insert-pk-number')}
+              required
+              name={'pk_number'}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              type={'text'}
+              value={formik.values.pk_number || ''}
+            />
+            <InputTextarea
+              label={t('address')}
+              placeholder={t('insert-address')}
+              required
+              name={'address'}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              type={'address'}
+              value={formik.values.address || ''}
+              errorMessage={formik.touched.address && formik.errors.address}
+            />
+          </>
           <InputText
             label={t('debitur-name')}
             placeholder={t('insert-debitur-name')}

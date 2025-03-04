@@ -9,4 +9,5 @@ export interface IReqCreateConsumerCredit {
   address?: string;
   consumer_credit_type: string;
   consumer_credit_sub_type?: string;
+  pk_number: string;
 }

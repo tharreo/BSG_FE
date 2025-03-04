@@ -24,6 +24,8 @@ export function useNewConsumerPage() {
     insurance: '',
     plafond: 0,
 
+    pk_number: '',
+
     agency: '',
     number: '',
     consumer_credit_sub_type: undefined,
@@ -64,7 +66,6 @@ export function useNewConsumerPage() {
       values.plafond &&
       values.agency &&
       values.number &&
-      values.consumer_credit_sub_type &&
       values.consumer_credit_type
     );
   }

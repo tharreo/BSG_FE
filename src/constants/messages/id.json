@@ -133,6 +133,8 @@
   "credit-commercial-pk-kur-success-created" : "kredit komersial KUR berhasil dibuat",
   "credit-agreement-number": "nomor perjanjian kredit",
   "KUR":"KUR",
-  "KMP" :"KMP"
+  "KMP" :"KMP",
+  "pk_number":"nomor pk",
+  "insert-pk-number":"masukkan nomor pk"
 
 }

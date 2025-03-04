@@ -11,4 +11,5 @@ export interface IResCreditConsumer {
   consumer_credit_type: string;
   consumer_credit_sub_type: string;
   number: number;
+  pk_number: string;
 }
