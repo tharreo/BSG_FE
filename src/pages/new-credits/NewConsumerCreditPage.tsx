@@ -1,23 +1,18 @@
 
-import { MainCard } from '../../components/MainCard.tsx';
-import { InputText } from '../../components/InputText.tsx';
-import { t } from 'i18next';
-import { InputDatePicker } from '../../components/InputDatePicker.tsx';
-import { InputRupiah } from '../../components/InputRupiah.tsx';
 import {
   Alert,
   Button,
-  CircularProgress,
-  FormControl,
-  FormControlLabel,
-  FormLabel,
-  Radio,
-  RadioGroup,
+  CircularProgress
 } from '@mui/material';
+import { t } from 'i18next';
+import { InputDatePicker } from '../../components/InputDatePicker.tsx';
+import { InputRupiah } from '../../components/InputRupiah.tsx';
 import { InputSelect } from '../../components/InputSelect.tsx';
-import { creditSubTypeList, creditTypeList } from '../../constants/data-constants.ts';
+import { InputText } from '../../components/InputText.tsx';
 import { InputTextarea } from '../../components/InputTextArea.tsx';
+import { MainCard } from '../../components/MainCard.tsx';
 import { PageTitle } from '../../components/PageTitle.tsx';
+import { creditTypeList } from '../../constants/data-constants.ts';
 import { useNewConsumerPage } from '../../hooks/useNewConsumerPage.ts';
 
 export function NewConsumerCreditPage() {
