@@ -15,4 +15,5 @@ export const ENDPOINT = {
   LIST_COMMERCIAL: () => `/credit/v1/list/commercial`,
   CRETE_COMMERCIAL: () => `/credit/v1/new/commercial`,
   CREATE_PK_KUR: () => `/credit/v1/new/pk-kur`,
+  RESET_PASSWORD : (id : string) => `/account/v1/reset-password/${id}`,
 };

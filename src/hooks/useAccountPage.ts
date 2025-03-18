@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../redux/store.ts';
 import { AccountActions } from '../redux/actions/account.actions.ts';
 import { IResListAccount } from '../model/response/IResListAccount.ts';
-import { defaultPaginatedResponse, IResPaginatedData } from '../model/response/ResponseModel.ts';
+import { BaseResponse, defaultPaginatedResponse, IResPaginatedData } from '../model/response/ResponseModel.ts';
 import { defaultPaginationType, ROUTES } from '../routes/routes.ts';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { HttpService } from '../service/http-service.ts';
@@ -10,6 +10,13 @@ import { UiServices } from '../service/ui-service.ts';
 import { ENDPOINT } from '../constants/endpoint.ts';
 import ErrorService from '../service/error-service.ts';
 import { t } from 'i18next';
+import { UtilsHelper } from '../helper/utils-helper.ts';
+
+interface iResResetPassword{
+  name : string;
+  password : string;
+  username : string;
+}
 
 export function useAccountPage() {
   const Account = useAppSelector((state) => state.Account);
@@ -20,6 +27,7 @@ export function useAccountPage() {
   const httpService = new HttpService();
   const uiService = new UiServices();
   const errorService = new ErrorService();
+  const utilsHelper = new UtilsHelper();
 
   const [dataList, setDataList] = useState<IResListAccount[]>([]);
   const [loading, setLoading] = useState<boolean | undefined>();
@@ -27,6 +35,9 @@ export function useAccountPage() {
   const [dataSelected, setDataSelected] = useState<IResListAccount | undefined>(undefined);
   const [paginatedData, setPaginatedData] = useState<IResPaginatedData>(defaultPaginatedResponse);
   const [popupLoading, setPopupLoading] = useState<boolean>(false);
+  const [loadingResetPassword, setLoadingResetPassword] = useState<boolean>(false)
+  const [ResponseResetPassword, setResponseResetPassword] = useState<iResResetPassword | undefined>()
+
 
   useEffect(() => {
     fetchData(location.search);
@@ -74,6 +85,24 @@ export function useAccountPage() {
     }
   }
 
+  function onClickResetPassword(id : string) {
+    setLoadingResetPassword(true)
+    httpService.PATCH(ENDPOINT.RESET_PASSWORD(id)).then((res : BaseResponse<iResResetPassword>) => {
+      setLoadingResetPassword(false)
+      setResponseResetPassword(res.data.response_data)
+    }).catch(e => {
+      setLoading(false)
+      errorService.fetchApiError(e)
+    })
+  }
+
+  function copyPassword() {
+    if(ResponseResetPassword?.password){
+      utilsHelper.copyToClipboard(ResponseResetPassword.password)
+      setResponseResetPassword(undefined)
+    }
+  }
+
   return {
     dataList,
     loading,
@@ -85,5 +114,10 @@ export function useAccountPage() {
     onChangePagination,
     onSubmitDelete,
     onClickDeleteAccount,
+    onClickResetPassword,
+    loadingResetPassword,
+    ResponseResetPassword,
+    setResponseResetPassword,
+    copyPassword,
   };
 }

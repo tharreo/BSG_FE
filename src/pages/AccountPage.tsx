@@ -3,9 +3,9 @@ import { useBreadcrumb } from '../hooks/useBradcrumb.ts';
 import { ROUTES } from '../routes/routes.ts';
 import { t } from 'i18next';
 import { ITableColumnData, MainTable } from '../components/MainTable.tsx';
-import { Avatar, Button, IconButton, Tooltip, Zoom } from '@mui/material';
+import { Avatar, Button, Card, CardContent, IconButton, Tooltip, Zoom } from '@mui/material';
 import { PageTitle } from '../components/PageTitle.tsx';
-import { MdAdd, MdLockReset } from 'react-icons/md';
+import { MdAdd, MdClose, MdFileCopy, MdLockReset } from 'react-icons/md';
 import DateHelper from '../helper/date-helper.ts';
 import { IResListAccount } from '../model/response/IResListAccount.ts';
 import { Link } from 'react-router-dom';
@@ -13,6 +13,7 @@ import MainPagination from '../components/MainPagination.tsx';
 import { PopupModal } from '../components/PopupModal.tsx';
 import { ASSETS } from '../constants/assets.ts';
 import { useAccountPage } from '../hooks/useAccountPage.ts';
+import { MainCard } from '../components/MainCard.tsx';
 
 export function AccountPage() {
   const breadcrumb = useBreadcrumb();
@@ -78,7 +79,7 @@ export function AccountPage() {
         {/*  </IconButton>*/}
         {/*</Tooltip>*/}
         <Tooltip TransitionComponent={Zoom} title={`${t('reset_password')} ${e.name}`}>
-          <IconButton>
+          <IconButton onClick={() => page.onClickResetPassword(e.id)}>
             <MdLockReset />
           </IconButton>
         </Tooltip>
@@ -125,7 +126,29 @@ export function AccountPage() {
           </Link>
         </div>
       </div>
-      <MainTable loading={page?.loading} data={page.dataList} columns={tableData} />
+      {page?.ResponseResetPassword && (
+        <MainCard>
+          <div className="flex justify-between w-full">
+            <div>
+              <div className="font-semibold"> password baru untuk {page?.ResponseResetPassword.name}</div>
+              <div className="flex items-center gap-2 py-2 px-7 mt-4 bg-gray-100 rounded-md w-fit">
+                <div>{page.ResponseResetPassword?.password}</div>
+                <div>
+                  <IconButton onClick={page.copyPassword}> 
+                    <MdFileCopy />
+                  </IconButton>
+                </div>
+              </div>
+            </div>
+            <div>
+              <IconButton onClick={() => page.setResponseResetPassword(undefined)}>
+                <MdClose />
+              </IconButton>
+            </div>
+          </div>
+        </MainCard>
+      )}
+      <MainTable loading={page?.loading || page?.loadingResetPassword} data={page.dataList} columns={tableData} />
       <MainPagination loading={page.loading} data={page.paginatedData} onChange={(e) => page.onChangePagination(e)} />
     </>
   );
