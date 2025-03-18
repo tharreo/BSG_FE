@@ -3,7 +3,7 @@ import { useBreadcrumb } from '../hooks/useBradcrumb.ts';
 import { ROUTES } from '../routes/routes.ts';
 import { t } from 'i18next';
 import { ITableColumnData, MainTable } from '../components/MainTable.tsx';
-import { Avatar, Button, Card, CardContent, IconButton, Tooltip, Zoom } from '@mui/material';
+import { Avatar, Button, IconButton, Tooltip, Zoom } from '@mui/material';
 import { PageTitle } from '../components/PageTitle.tsx';
 import { MdAdd, MdClose, MdFileCopy, MdLockReset } from 'react-icons/md';
 import DateHelper from '../helper/date-helper.ts';
