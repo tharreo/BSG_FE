@@ -66,7 +66,6 @@ export function NewCommercialCreditPage() {
       formik.values.name &&
       formik.values.number &&
       formik.values.plafond &&
-      formik.values.assurance &&
       formik.values.request_number &&
       formik.values.pk_date &&
       formik.values.business_type
@@ -155,15 +154,7 @@ export function NewCommercialCreditPage() {
             onBlur={formik.handleBlur}
             errorMessage={formik.touched.business_type && formik.errors.business_type}
           />
-          <InputText
-            label={t('assurance')}
-            placeholder={t('insert-assurance')}
-            name={'assurance'}
-            value={formik.values.assurance}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            errorMessage={formik.touched.assurance && formik.errors.assurance}
-          />
+
 
           <Alert severity="warning">{t('make-sure-data-alert')}</Alert>
           <Button disabled={checkValidButton()} onClick={() => formik.handleSubmit()} variant={'contained'}>
