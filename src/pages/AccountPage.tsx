@@ -59,12 +59,6 @@ export function AccountPage() {
       ),
     },
     {
-      key: 'created_by',
-      headerTitle: t('created_by'),
-      align: 'left',
-      value: 'created_by',
-    },
-    {
       key: 'action',
       layouts: uiAction,
     },
