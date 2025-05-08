@@ -62,15 +62,12 @@ export function NewCommercialCreditPage() {
   });
 
   function checkValidButton() {
-    return !(
-      formik.values.name &&
-      formik.values.number &&
-      formik.values.plafond &&
-      formik.values.request_number &&
-      formik.values.pk_date &&
-      formik.values.business_type
-    );
-  }
+    if (formik.values.name && formik.values.request_number && formik.values.pk_date && formik.values.plafond && formik.values.business_type) {
+      return false
+    } else {
+      return true
+    }
+  } 
 
   useEffect(() => {
     console.log(formik.values);
@@ -96,16 +93,7 @@ export function NewCommercialCreditPage() {
       <PageTitle title={t('add-new-commercial-credit')} />
       <MainCard>
         <div className={'grid gap-6'}>
-          <InputText
-            label={t('number')}
-            placeholder={t('insert-number')}
-            required
-            name={'number'}
-            value={formik.values.number}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            errorMessage={formik.touched.number && formik.errors.number}
-          />
+
           <InputText
             label={t('debitur-name')}
             placeholder={t('insert-debitur-name')}

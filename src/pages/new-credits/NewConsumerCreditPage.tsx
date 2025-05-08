@@ -25,16 +25,7 @@ export function NewConsumerCreditPage() {
       <PageTitle title={t('new-consumer-credit')} />
       <MainCard>
         <div className={'grid gap-7'}>
-          <InputText
-            label={t('number')}
-            placeholder={t('insert-number')}
-            required
-            name={'number'}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.number || ''}
-            errorMessage={formik.touched.number && formik.errors.number}
-          />
+
           <InputSelect
             label={t('type')}
             value={formik.values.consumer_credit_type}

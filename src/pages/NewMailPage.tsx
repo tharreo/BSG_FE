@@ -94,15 +94,6 @@ export function NewMailPage() {
                   errorMessage={formik.touched.name && formik.errors.name}
                 />
               )}
-              <InputText
-                label={t('number')}
-                placeholder={t('insert-number')}
-                name={'count'}
-                value={formik.values.count || ''}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                errorMessage={formik.touched.count && formik.errors.count}
-              />
 
               <InputDatePicker
                 label={t('date')}

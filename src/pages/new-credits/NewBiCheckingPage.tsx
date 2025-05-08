@@ -35,7 +35,12 @@ export function NewBiCheckingPage() {
   const [loadingSubmit, setLoadingSubmit] = useState<boolean>(false);
 
   function checkDisableButton() {
-    return !formik.isValid
+    console.log(formik.values)
+    if (formik.values.request_date && formik.values.name && formik.values.ktp_number && formik.values.place_of_birth && formik.values.date_of_birth && formik.values.objective && formik.values.note ){
+       return false 
+    } else {
+      return true
+    }
   }
 
   const validationScheme = yup.object().shape({
@@ -81,17 +86,7 @@ export function NewBiCheckingPage() {
       <h1>NEW BI CHECKING</h1>
       <MainCard>
         <div className={'grid gap-6'}>
-          <InputText
-            label={t('number')}
-            required
-            placeholder={t('insert-number')}
-            className={'number'}
-            name={'number'}
-            value={formik.values.number || ''}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            errorMessage={formik.touched.number && formik.errors.number}
-          />
+  
           <InputDatePicker
             label={t('request-date')}
             required

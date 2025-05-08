@@ -58,16 +58,11 @@ export function useNewConsumerPage() {
   });
 
   function checkValidButton() {
-    const values = formik.values;
-    return !(
-      values.name &&
-      values.date &&
-      values.insurance &&
-      values.plafond &&
-      values.agency &&
-      values.number &&
-      values.consumer_credit_type
-    );
+    if (formik.values.consumer_credit_type && formik.values.phone_number && formik.values.pk_number && formik.values.address && formik.values.name && formik.values.insurance && formik.values.agency && formik.values.plafond ) {
+
+    } else {
+      return true
+    }
   }
 
   useEffect(() => {

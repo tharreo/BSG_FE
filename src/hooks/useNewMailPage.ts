@@ -51,7 +51,23 @@ export function useNewMailPage() {
   });
 
   function checkValidButton() {
-    return !formik.isValid
+    
+      if (formik.values.type==="INCOMING"){
+        if (formik.values.type && formik.values.sub_type && formik.values.name && formik.values.date && formik.values.sender ){
+          return false
+      } else {
+        return true
+      }
+    } else if (formik.values.type==="OUTGOING"){
+       if (formik.values.type && formik.values.sub_type && formik.values.date && formik.values.sender && formik.values.recipient ){
+          return false
+      } else {
+        return true
+      }
+    }
+     else {
+      return true
+    }
   }
 
   useEffect(() => {
