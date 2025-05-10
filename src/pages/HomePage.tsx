@@ -59,6 +59,18 @@ export function HomePage() {
             {data?.total_incoming_mail ? numberFormat.thousandSeparator(data.total_incoming_mail) : '-'} {t('mail')}
           </div>
         </MainCard>
+        <MainCard>
+          <div className={' text-xl text-slate-500'}>{t('total_plafond_credit_consumer')}</div>
+          <div className={'text-4xl mt-4 font-semibold'}>
+            {data?.total_outgoing_mail ? numberFormat.toRupiah(data.total_plafond_consumer) : '-'}
+          </div>
+        </MainCard>
+        <MainCard>
+          <div className={' text-xl text-slate-500'}>{t('total_plafond_credit_commercial')}</div>
+          <div className={'text-4xl mt-4 font-semibold'}>
+            {data?.total_outgoing_mail ? numberFormat.toRupiah(data.total_plafond_commercial) : '-'}
+          </div>
+        </MainCard>
       </div>
     </div>
   );
